@@ -177,7 +177,7 @@ defmodule Braintree.HTTP do
     cacertfile = Path.join(:code.priv_dir(:braintree), @cacertfile)
     http_opts = Braintree.get_env(:http_options, [])
 
-    [:with_body, ssl_options: [cacertfile: cacertfile]] ++ http_opts
+    [:with_body, ssl_options: [cacertfile: cacertfile, versions: [:"tlsv1.2"]]] ++ http_opts
   end
 
   @doc false
